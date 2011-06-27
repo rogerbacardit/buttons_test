@@ -1,10 +1,22 @@
 @import base
+@import scrollbar
 @import compass
 @import blueprint
 @import blueprint/scaffolding
 @import compass/css3
+@import "blueprint/buttons"
+@import "compass/css3/gradient"
+@import "compass/css3/box-shadow"
+@import "compass/css3/font-face"
+@import "compass/css3/text-shadow"
+@import "compass/css3/transition"
+@import "compass/css3/shared"
+@import "compass/reset/utilities"
 
-+global-reset
+@font-face
+  font-family: ostrich
+  src: url("/fonts/embed/ostrich.eot")
+  src: local('☺'), url('/fonts/embed/ostrich.ttf') format("truetype")
 
 body
   +blueprint-typography(true)
@@ -21,3 +33,30 @@ body
 #content
   +column($blueprint-grid-columns)
 
+a.thebg
+  color: white
+  text-decoration: none
+  padding: 10px
+  border-radius: 5px
+  font-weight: bold
+  +transition-property
+  +transition-duration
+  +transition-timing-function
+  &:hover
+    color: white
+    background: #770000
+.container
+  background: red
+  position: relative
+  height: 250px
+  width: 100%
+.scrollbar
+  position: absolute
+  top: 20px
+  right: 20px
+  bottom: 20px
+  left: 20px
+  margin: 40px
+  overflow-y: auto
+  overflow-x: hidden
+  +cute-scrollbar
